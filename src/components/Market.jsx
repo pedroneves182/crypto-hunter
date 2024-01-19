@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import CoinRow from "./CoinRow"
 import { Logger } from "sass";
+import Loading from "./Loading";
 
 export default function Market(props) {
   const [data, setData] = useState(null);
@@ -38,20 +39,21 @@ export default function Market(props) {
           <p>Market Cap</p>
         </div>
         <div className="coin-row-list">
-        {data ? (
+          {data ? (
             data.map((item) => (
-              <CoinRow key={item.id} image={item.image} name={item.name} price={item.current_price} variation={item.price_change_percentage_24h} market_cap={item.market_cap}/>
+              <CoinRow key={item.id} image={item.image} name={item.name} price={item.current_price} variation={item.price_change_percentage_24h} market_cap={item.market_cap} />
             ))
           ) : (
-            <div>Carregando dados...</div>
+            <Loading />
+
           )}
         </div>
         <div className="market-pagination">
-          <button onClick={() => {setCurrentPage(1)}} className="market-pagination__button">1</button>
-          <button onClick={() => {setCurrentPage(2)}} className="market-pagination__button">2</button>
-          <button onClick={() => {setCurrentPage(3)}} className="market-pagination__button">3</button>
-          <button onClick={() => {setCurrentPage(4)}} className="market-pagination__button">4</button>
-          <button onClick={() => {setCurrentPage(5)}} className="market-pagination__button">5</button>
+          <button onClick={() => { setCurrentPage(1) }} className="market-pagination__button">1</button>
+          <button onClick={() => { setCurrentPage(2) }} className="market-pagination__button">2</button>
+          <button onClick={() => { setCurrentPage(3) }} className="market-pagination__button">3</button>
+          <button onClick={() => { setCurrentPage(4) }} className="market-pagination__button">4</button>
+          <button onClick={() => { setCurrentPage(5) }} className="market-pagination__button">5</button>
         </div>
       </div>
     </section>

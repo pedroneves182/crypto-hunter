@@ -2,10 +2,10 @@ import { useEffect, useState } from "react"
 import floatingBTC from "../assets/floating_btc.png"
 import floatingETH from "../assets/floating_eth.png"
 import { Link } from "react-router-dom";
+import Loading from "./Loading";
 
 export default function Hero(props) {
   const [data, setData] = useState([]);
-  // const [coinsLoading, setCoinsLoading] = useState(true);
   const apiKey = import.meta.env.VITE_COIN_API_KEY;
   const apiUrl = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=4&page=1&sparkline=false&x_cg_demo_api_key=${apiKey}`
 
@@ -18,7 +18,6 @@ export default function Hero(props) {
         }
         const data = await apiResponse.json();
         setData(data);
-        // setCoinsLoading(false)
       } catch (error) {
         console.error("Fetch error:", error);
       }
@@ -48,7 +47,7 @@ export default function Hero(props) {
               </Link>
             ))
           ) : (
-            <div>Carregando dados...</div>
+            <Loading />
           )}
 
         </div>
