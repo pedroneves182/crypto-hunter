@@ -2,10 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.scss'
-import { HashRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <HashRouter>
+  <BrowserRouter basename={"/crypto-hunter"}>
     <App />
-  </HashRouter>
+  </BrowserRouter>
 )
