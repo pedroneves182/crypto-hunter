@@ -4,6 +4,10 @@ import floatingETH from "../assets/floating_eth.png"
 import { Link } from "react-router-dom";
 import Loading from "./Loading";
 
+import '../styles/components/hero.scss';
+import '../styles/components/coincard.scss';
+
+
 export default function Hero(props) {
   const [data, setData] = useState([]);
   const apiKey = import.meta.env.VITE_COIN_API_KEY;

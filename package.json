@@ -1,5 +1,4 @@
 {
-  "homepage": "https://pedroneves182.github.io/crypto-hunter",
   "name": "cryptoapp",
   "private": true,
   "version": "0.0.0",
@@ -13,6 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@tabler/icons-react": "^2.46.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.3"

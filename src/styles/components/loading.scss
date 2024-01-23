@@ -1,0 +1,21 @@
+.loading {
+  animation: loading 1s linear infinite;
+  position: relative;
+  display: block;
+  height: 4rem;
+  width: 4rem;
+  margin: 5rem auto;
+  background-repeat: no-repeat;
+  background-size: 1rem 1rem;
+  background-position: 0 0, 0 100%, 100% 0, 100% 100%;
+  background-image:
+    linear-gradient(#00DD56 1rem, transparent 0),
+    linear-gradient(#fff 1rem, transparent 0),
+    linear-gradient(#fff 1rem, transparent 0),
+    linear-gradient(#006DF0 1rem, transparent 0);
+}
+@keyframes loading {
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,29 @@
+@use '../variables.scss' as var;
+
+.why-card {
+  display: flex;
+  height: 100%;
+  gap: 2rem;
+  font-weight: 500;
+  background-color: hsla(0, 0, 100%, .05);
+  border: 1px solid hsla(0, 0, 51%, .25);
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  font-size: 1.125rem;
+
+  &__icon {
+    padding: 1.125rem;
+    border-radius: 1rem;
+    background: var.$gradient;
+    height: 3.875rem;
+    width: 4.25rem;
+    text-align: center;
+    margin-top: .25rem;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+}

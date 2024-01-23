@@ -1,5 +1,7 @@
 import ReactLogo from '../assets/react.svg'
 
+import '../styles/components/footer.scss';
+
 export default function Footer() {
   return (
     <footer className='footer'>

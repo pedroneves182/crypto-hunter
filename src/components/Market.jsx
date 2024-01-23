@@ -3,6 +3,8 @@ import CoinRow from "./CoinRow"
 import { Logger } from "sass";
 import Loading from "./Loading";
 
+import '../styles/components/market.scss';
+
 export default function Market(props) {
   const [data, setData] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -11,7 +13,6 @@ export default function Market(props) {
   const apiUrl = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=${currentPage}&sparkline=false&x_cg_demo_api_key=${apiKey}`;
 
   useEffect(() => {
-    console.log(JSON.stringify(apiKey));
     async function fetchApiData() {
       try {
         const apiResponse = await fetch(apiUrl);
@@ -41,7 +42,7 @@ export default function Market(props) {
         <div className="coin-row-list">
           {data ? (
             data.map((item) => (
-              <CoinRow key={item.id} image={item.image} name={item.name} price={item.current_price} variation={item.price_change_percentage_24h} market_cap={item.market_cap} />
+              <CoinRow key={item.id} id={item.id} image={item.image} name={item.name} price={item.current_price} variation={item.price_change_percentage_24h} market_cap={item.market_cap} />
             ))
           ) : (
             <Loading />

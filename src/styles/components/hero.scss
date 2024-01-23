@@ -1,0 +1,72 @@
+@use '../variables' as var;
+
+.hero {
+  height: 100vh;
+  background-image: linear-gradient(0deg, #0f051d 30%, #130749 70%);
+  &__content {
+    position: relative;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var.$titlefont;
+  }
+
+  &__text-container {
+    position: relative;
+    font-size: 4.5rem;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 170%;
+  }
+
+  &__title--effect {
+    color: transparent;
+    background-clip: text;
+    background-image: var.$gradient;
+    filter: drop-shadow(2px 4px 1rem rgba(0, 0, 0, 0.6));
+  }
+
+  &__float {
+    height: 4.5rem;
+    position: absolute;
+    animation: bounce 2000ms infinite;
+    filter: drop-shadow(1px 3px .5rem rgba(0, 0, 0, 0.6));
+
+    
+
+    &--btc {
+      left: -50px;
+      top: 32px;
+    }
+
+    &--eth {
+      right: -50px;
+      top: 32px;
+    }
+  }
+
+  &__coin-slider {
+    margin-top: 3rem;
+    display: flex;
+    width: 100%;
+    max-width: 60rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
+  }
+
+  50% {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
