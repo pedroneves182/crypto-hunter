@@ -30,7 +30,7 @@ export default function Market(props) {
   }, [currentPage])
 
   return (
-    <section className="market-section">
+    <section className="market-section" id="market">
       <div className="market__content">
         <h2 className="market__title">Market Update</h2>
         <div className="market__stripe market__grid">

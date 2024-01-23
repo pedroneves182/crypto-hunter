@@ -6,7 +6,7 @@ import '../styles/components/whyus.scss';
 
 export default function WhyUs(props) {
   return (
-    <section className="why-section">
+    <section className="why-section" id="about">
       <div className="why__content">
         <h2 className="why__title">WHY <span>CHOOSE US</span></h2>
         <div className="why__grid">
